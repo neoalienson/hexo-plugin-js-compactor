@@ -1,0 +1,37 @@
+{
+    "name": "hexo-plugin-concatjs",
+    "version": "0.1.0",
+    "description": "Concat js files, minifier and the insert into head or body",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "release": "standard-version",
+        "release:minor": "standard-version --release-as minor",
+        "release:patch": "standard-version --release-as patch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/neoalienson/hexo-plugin-concatjs.git"
+    },
+    "keywords": [
+        "hexo",
+        "comments"
+    ],
+    "author": "neo@01man.com",
+    "license": "Apache 2.0",
+    "bugs": {
+        "url": "https://github.com/neoalienson/hexo-plugin-concatjs/issues"
+    },
+    "homepage": "https://github.com/neoalienson/hexo-plugin-concatjs",
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "node-html-parser": "^6.1.13",
+        "standard-version": "^9.5.0"
+    },
+    "dependencies": {
+        "bluebird": "^3.7.2",
+        "cheerio": "^1.0.0-rc.12",
+        "minimatch": "^9.0.4",
+        "uglify-js": "^3.17.4"
+    }
+}
