@@ -1,19 +1,4 @@
 /* global hexo */
-// const { config } = hexo;
-
-// if (config) {
-//     if (!config.concatjs) {
-//         return;
-//     }
-//     if (!config.concatjs.enable) {
-//         return;
-//     }
-
-//     hexo.extend.filter.register('after_render:js', require('./lib/optimize'));
-//     hexo.extend.filter.register('after_generate', require('./lib/concat'));
-// }
-
-/* global hexo */
 function run(config) {
     if (!config) {
         return;
@@ -22,17 +7,20 @@ function run(config) {
         return;
     }
 
-    hexo.extend.filter.register('after_post_render', function(data){
-        console.log(data);
-        return data;
-    });
+    if (config.minify) {
+        hexo.extend.filter.register('after_render:js', require('./lib/optimise'));
+    }
 
-    hexo.extend.filter.register('after_generate', function(){
+    hexo.extend.filter.register('after_generate', function(data){
         require('./lib/concat')(this);
     });
 
-    hexo.extend.injector.register('body_start', config.concat.bundle_path.body_first);
-    hexo.extend.injector.register('body_end', config.concat.bundle_path.body_last);
+    if (config.concat.bundle_path.body_first) {
+        hexo.extend.injector.register('body_start', `<script type="text/javascript" src="${config.concat.bundle_path.body_first}" ></script>`);
+    }
+    if (config.concat.bundle_path.body_last) {
+        hexo.extend.injector.register('body_end', `<script type="text/javascript" src="${config.concat.bundle_path.body_last}" ></script>`);
+    }
 }
 
-run(hexo.config.concatjs);
+run(hexo.config.optimisejs);
