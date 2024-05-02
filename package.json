@@ -1,7 +1,7 @@
 {
-    "name": "hexo-plugin-concatjs",
+    "name": "hexo-plugin-optimisejs",
     "version": "0.1.0",
-    "description": "Concat js files, minifier and the insert into head or body",
+    "description": "Concat js files, minifiy and then insert to after beginning or before endding of body tag",
     "main": "index.js",
     "scripts": {
         "test": "jest",
@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/neoalienson/hexo-plugin-concatjs.git"
+        "url": "git+https://github.com/neoalienson/hexo-plugin-optimisejs.git"
     },
     "keywords": [
         "hexo",
@@ -20,9 +20,9 @@
     "author": "neo@01man.com",
     "license": "Apache 2.0",
     "bugs": {
-        "url": "https://github.com/neoalienson/hexo-plugin-concatjs/issues"
+        "url": "https://github.com/neoalienson/hexo-plugin-optimisejs/issues"
     },
-    "homepage": "https://github.com/neoalienson/hexo-plugin-concatjs",
+    "homepage": "https://github.com/neoalienson/hexo-plugin-optimisejs",
     "devDependencies": {
         "jest": "^29.7.0",
         "node-html-parser": "^6.1.13",
