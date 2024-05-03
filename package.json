@@ -1,7 +1,7 @@
 {
-    "name": "hexo-plugin-optimisejs",
+    "name": "hexo-plugin-js-compactor",
     "version": "0.1.0",
-    "description": "Concat js files, minifiy and then insert to after beginning or before endding of body tag",
+    "description": "Minifiy, concat js files,  and then insert to after beginning or before endding of body tag",
     "main": "index.js",
     "scripts": {
         "test": "jest",
@@ -11,18 +11,18 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/neoalienson/hexo-plugin-optimisejs.git"
+        "url": "git+https://github.com/neoalienson/hexo-plugin-js-compactor.git"
     },
     "keywords": [
         "hexo",
-        "comments"
+        "performance"
     ],
     "author": "neo@01man.com",
     "license": "Apache 2.0",
     "bugs": {
-        "url": "https://github.com/neoalienson/hexo-plugin-optimisejs/issues"
+        "url": "https://github.com/neoalienson/hexo-plugin-js-compactor/issues"
     },
-    "homepage": "https://github.com/neoalienson/hexo-plugin-optimisejs",
+    "homepage": "https://github.com/neoalienson/hexo-plugin-js-compactor",
     "devDependencies": {
         "jest": "^29.7.0",
         "node-html-parser": "^6.1.13",

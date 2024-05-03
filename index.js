@@ -8,7 +8,7 @@ function run(config) {
     }
 
     if (config.minify) {
-        hexo.extend.filter.register('after_render:js', require('./lib/optimise'));
+        hexo.extend.filter.register('after_render:js', require('./lib/minify'));
     }
 
     hexo.extend.filter.register('after_generate', function(data){
@@ -23,4 +23,4 @@ function run(config) {
     }
 }
 
-run(hexo.config.optimisejs);
+run(hexo.config.js_compactor);
