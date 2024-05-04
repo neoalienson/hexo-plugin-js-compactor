@@ -11,7 +11,12 @@ function run(config) {
         hexo.extend.filter.register('after_render:js', require('./lib/minify'));
     }
 
-    hexo.extend.filter.register('after_generate', function(data){
+    
+    hexo.extend.filter.register('before_generate', function(){
+        require('./lib/download')(this);
+    });
+
+    hexo.extend.filter.register('after_generate', function(){
         require('./lib/concat')(this);
     });
 

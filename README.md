@@ -25,13 +25,13 @@ js_compactor:
 
 ### Download remote js
 
-You can download remote js to concat. However, the file must download under source folder.
+You can download remote js to local. However, the file must download under source folder.
 
 ```
-    downloads:
-        - url: https://raw.githubusercontent.com/apache/echarts/5.5.0/dist/echarts.min.js
-          local: source/cache/echarts.min.js
-          placement: body_first    
+  downloads:
+  - url: https://raw.githubusercontent.com/apache/echarts/5.5.0/dist/echarts.min.js
+    local: source/cache/echarts.min.js
+
 ```
 
 ## Contribution
