@@ -19,9 +19,12 @@ js_compactor:
         body_first: '/js/bundle_first.js'
         body_last: '/js/bundle_last.js'
     pattern:
+        skip: 'echarts\.min\.js' # file size is too large, which would slow down for first visit
         body_first: 'jquery\.min\.js'
         body_last: '^(?!.*jquery\.min\.js).*$'    
 ```
+
+Paths under `bundle_path` are the output files from the concatenation. Patterns are regular expression.
 
 ### Download remote js
 
@@ -33,6 +36,10 @@ You can download remote js to local. However, the file must download under sourc
     local: source/cache/echarts.min.js
 
 ```
+
+## Issues
+
+1. Only js from post is extracted. js from page is not extracted.
 
 ## Contribution
 
