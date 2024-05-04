@@ -20,7 +20,18 @@ js_compactor:
         body_last: '/js/bundle_last.js'
     pattern:
         body_first: 'jquery\.min\.js'
-        body_last: '^(?!.*jquery\.min\.js).*$'
+        body_last: '^(?!.*jquery\.min\.js).*$'    
+```
+
+### Download remote js
+
+You can download remote js to concat. However, the file must download under source folder.
+
+```
+    downloads:
+        - url: https://raw.githubusercontent.com/apache/echarts/5.5.0/dist/echarts.min.js
+          local: source/cache/echarts.min.js
+          placement: body_first    
 ```
 
 ## Contribution
