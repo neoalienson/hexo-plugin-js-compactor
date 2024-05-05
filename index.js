@@ -14,11 +14,11 @@ function run(config) {
     
     hexo.extend.filter.register('before_generate', function(){
         require('./lib/download')(this);
-    });
+        }, 1);
 
     hexo.extend.filter.register('after_generate', function(){
         require('./lib/concat')(this);
-    });
+        }, 100);
 
     if (config.concat.bundle_path.body_first) {
         hexo.extend.injector.register('body_start', `<script type="text/javascript" src="${config.concat.bundle_path.body_first}" ></script>`);
