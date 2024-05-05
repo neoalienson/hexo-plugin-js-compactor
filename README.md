@@ -3,7 +3,7 @@
   
 # hexo-plugin-js-compactor
 Minifiy, concat js files,  and then insert to after beginning or before endding of body tag.
-Create from https://github.com/chenzhutian/hexo-all-minifier focus on js, with last hexo version supported.
+Create from https://github.com/chenzhutian/hexo-all-minifier focus on js. Compatible to Hexo 5.0 or above.
 
 ## Configurations
 
