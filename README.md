@@ -45,6 +45,19 @@ You can download remote js to local. However, the file must download under sourc
 
 1. Only js from post is extracted. js from page is not extracted.
 
+## Testing
+
+Run the test suite:
+
+```bash
+npm test
+```
+
+The tests include:
+- Debug functionality verification
+- Configuration handling
+- Error handling scenarios
+
 ## Contribution
 
 Keep it simple and stupid for now. Any pull request is welcomed and will reviewed.
