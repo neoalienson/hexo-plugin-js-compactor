@@ -97,30 +97,35 @@ js_compactor:
     bundle_path:
       body_first: '/js/bundle_first.js'  # Early-loading scripts bundle
       body_last: '/js/bundle_last.js'    # Regular scripts bundle
-    pattern:
+    # Auto strategy: regex patterns for auto-discovery
+    auto_pattern:
       skip: 'echarts\.min\.js'          # Skip large files (regex)
       body_first: 'jquery\.min\.js'     # Match for early bundle (regex)
       body_last: '^(?!.*jquery\.min\.js).*$'  # Match for late bundle (regex)
-    # Manual strategy: specify exact files to bundle
-    files:
-      body_first: ['/js/jquery.min.js', '/js/bootstrap.min.js']
-      body_last: ['/js/utils.js', '/js/app.js']
+    # Manual strategy: exact paths or regex patterns
+    manual_pattern:
+      body_first: ['/js/jquery.min.js', 'bootstrap\.min\.js']
+      body_last: ['/js/utils.js', '/js/app.js', 'cache/.*\.js']
 ```
 
 ### Configuration Options
 
 - **strategy**: Extraction strategy (`auto` or `manual`)
   - `auto`: Auto-discover scripts that appear in multiple pages (default)
-  - `manual`: Use explicitly specified file lists
+  - `manual`: Use explicitly specified file lists or patterns
 - **bundle_path**: Output paths for concatenated bundles
-- **pattern**: Regular expressions to match script sources (used with `auto` strategy)
+- **auto_pattern**: Regular expressions for auto strategy (replaces `pattern`)
   - `skip`: Files to exclude from concatenation
   - `body_first`: Scripts for early loading (e.g., frameworks)
   - `body_last`: Regular application scripts
-- **files**: Explicit file lists (used with `manual` strategy)
-  - `body_first`: Array of JS files for early bundle
-  - `body_last`: Array of JS files for late bundle
+- **manual_pattern**: File paths or regex patterns for manual strategy (replaces `files`)
+  - `body_first`: Array of exact paths or regex patterns for early bundle
+  - `body_last`: Array of exact paths or regex patterns for late bundle
 - **debug**: When enabled, logs which files are being concatenated
+
+#### Backward Compatibility
+- `pattern` still works (alias for `auto_pattern`)
+- `files` still works (alias for `manual_pattern`)
 
 ### Download Remote JS
 
@@ -176,9 +181,10 @@ js_compactor:
 - Good for sites with consistent script usage patterns
 
 ### Manual Strategy
-- Explicitly specify which JS files to bundle
+- Explicitly specify which JS files to bundle using exact paths or regex patterns
 - Bundles specified files regardless of usage frequency
 - Provides full control over what gets concatenated
+- Supports both exact matching (`/js/jquery.min.js`) and regex patterns (`jquery\.min\.js`)
 - Ideal when you know exactly which scripts should be bundled
 
 ## Known Issues
@@ -212,6 +218,10 @@ test/
 ├── debug.test.js # Debug functionality tests
 └── a.test.js     # Core functionality tests
 ```
+
+## Related Plugins
+
+For CSS optimization, consider using a dedicated CSS concatenation plugin that follows the same architecture patterns as this JS plugin.
 
 ## Contributing
 
