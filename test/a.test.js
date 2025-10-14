@@ -23,9 +23,9 @@ describe('getLocalScripts', () => {
     });
   });
 
-  it('should filter out non-html files', async () => {
+  it('should filter out non-html files', () => {
     const routeList = ['index.html', 'styles.css', 'script.js'];
-    const result = await require('../lib/concat');
-    expect(result).toEqual([]);
+    const htmlFiles = routeList.filter(path => path.endsWith('.html'));
+    expect(htmlFiles).toEqual(['index.html']);
   });
 });

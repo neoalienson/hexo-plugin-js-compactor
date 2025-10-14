@@ -3,12 +3,12 @@
   
 # hexo-plugin-js-compactor
 
-Minifiy, concat js files,  and then insert to after beginning or before endding of body tag.
-Create from https://github.com/chenzhutian/hexo-all-minifier focus on js. Compatible to Hexo 5.0 or above.
+Minify, concat JS files, and then insert after beginning or before ending of body tag.
+Created from https://github.com/chenzhutian/hexo-all-minifier focusing on JS. Compatible with Hexo 5.0 or above.
 
 ## Configurations
 
-To enable the plugin add this to your config.yml . The example place jquery into beginning of body, the rest near the end of body:
+To enable the plugin add this to your _config.yml. The example places jQuery at the beginning of body, the rest near the end of body:
 
 ```
 js_compactor:
@@ -30,9 +30,9 @@ js_compactor:
 
 Paths under `bundle_path` are the output files from the concatenation. Patterns are regular expression.
 
-### Download remote js
+### Download remote JS
 
-You can download remote js to local. However, the file must download under source folder.
+You can download remote JS files to local storage. However, the file must be downloaded under the source folder.
 
 ```
   downloads:
@@ -41,9 +41,9 @@ You can download remote js to local. However, the file must download under sourc
 
 ```
 
-## Issues
+## Known Issues
 
-1. Only js from post is extracted. js from page is not extracted.
+1. Only JS from posts is extracted. JS from pages is not extracted.
 
 ## Testing
 
@@ -58,6 +58,6 @@ The tests include:
 - Configuration handling
 - Error handling scenarios
 
-## Contribution
+## Contributing
 
-Keep it simple and stupid for now. Any pull request is welcomed and will reviewed.
+Keep it simple for now. Any pull request is welcome and will be reviewed.
