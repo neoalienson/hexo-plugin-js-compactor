@@ -1,6 +1,6 @@
 {
     "name": "@neoalienson/hexo-plugin-js-compactor",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "Minify, concat JS files, and then insert after beginning or before ending of body tag.",
     "main": "index.js",
     "scripts": {
